@@ -3,23 +3,319 @@
 /*==========  Desktop First  ==========*/
 
 /* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
-	/**/
+@media only screen and (max-width : 1204px)
+	header
+		padding-top: 20px
+		.navbar
+			.navbar-header
+				width: 100%
+				.navbar-toggle
+					display: block
+					margin-right: -15px
+					margin-top: 0
+					margin-bottom: 0
+					padding: 31px 27px
+					border-radius: 0
+					border: 1px solid #ccc
+					height: 79px
+
+					.icon-bar
+						background-color: #2d2d2d
+						&:last-child
+							width: 70%
+
+					&.opened
+						.icon-bar
+							&:nth-child(2)
+								animation: navtoggle 0.5s forwards
+							&:nth-child(3)
+								animation: navtoggle2 0.5s forwards
+								transform: rotate(-45deg) translateY(-10px)
+							&:last-child
+								display: none
+				.navbar-brand
+					padding-left: 20px
+			.navbar-collapse.collapse, .navbar-collapse.collapsing
+				display: none !important
+				position: absolute
+				top: 80px
+				right: 0
+				width: 300px
+				margin: 0
+				padding: 22px 0 0
+				background-color: #f2f2f2
+				height: 1600px !important
+				z-index: 1000
+				&:before
+					position: absolute
+					right: 300px
+					top: 0
+					content: ""
+					height: 1600px
+					width: 1200px
+					z-index: -1
+					background-color: rgba(#000, 0.5)
+				.navbar-nav
+					width: 100%
+					position: relative !important
+					background-color: #f2f2f2
+					display: block
+					left: auto
+					&.navbar-right
+						float: left !important
+						li
+							&:last-child
+								border: none
+					li
+						display: block
+						float: none
+						padding: 9px 0 9px 0
+						border-bottom: 1px solid #ccc
+						a
+							padding-left: 40px
+							img
+								display: none
+						&.dropdown
+							padding: 0
+							a
+								padding-left: 40px
+							.dropdown-menu
+								position: relative
+								padding: 0
+								width: 100%
+								float: none
+								left: 0
+								top: 0
+								display: block
+								background-color: #e6e6e6
+								box-shadow: none
+								box-shadow: inset 0 0 5px rgba(#000, 0.15)
+								h3
+									line-height: 45px
+								p
+									display: none
+								&:after
+									content: none
+								.col-lg-5, .col-lg-7
+									padding: 0
+									margin: 0
+									border: none
+
+						&.active
+							a:before
+								content: none
+
+				&.in
+					display: block !important
+					animation: sliderRightOn 0.5s
+	.content
+		.col-lg-7
+			.row	
+				margin-right: 0
+				margin-left: 0
+				h2
+					font-size: 45px
+				article
+					padding-top: 40px
+					.article-main .desc-min
+						padding: 67px 26px 46px
+		.aside
+			.row
+				margin-left: 0
+				.main-right
+					padding-left: 21px
+					padding-right: 21px
+			.aside-sale
+				padding: 20px 21px
+
 
 
 /* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
-	/**/
+@media only screen and (max-width : 999px)
+	.content
+		.col-lg-7
+			.row
+				margin-right: -4px
+				h2
+					font-size: 30px
+					line-height: 35px
+				article
+					.article-main
+						.photo
+							min-height: 345px
+							overflow: hidden
+							text-align: center
+							border-radius: 5px
+							img
+								height: 100%
+								width: auto
+								text-align: center
+								display: block
+								margin-left: -60%
+				.desc-full
+					ul
+						li
+							font-size: 16px
 
+		.aside
+			.row
+				margin-left: -12px
+				.main-right
+					form
+						input[type=checkbox]+label
+							padding-left: 26px
+				.aside-sale
+					.info
+						p
+							padding: 0 15px
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
-	/**/
+	header
+		padding-top: 0
+		.navbar
+			margin-bottom: 0
+			.navbar-nav	
+				margin: 0
+			&>.container-fluid
+			.navbar-header
+				width: initial
+				.navbar-brand
+					img
+						width: 147px
+						padding-top: 20px
+				.navbar-toggle
+					margin-right: 0
+					margin-top: 0
+					margin-bottom: 0
+					padding: 31px 27px
+					border-radius: 0
+					border-left: 1px solid #ccc
+					border-bottom: 1px solid #ccc
+					height: 79px
+	.content
+		.col-lg-7
+			.row
+				margin-left: -16px
+				margin-right: -15px
+				article
+					height: auto
+					border-radius: 0
+					.header
+						text-align: center
+						a
+							display: block
+							margin-left: auto
+							margin-right: auto
+							width: 208px
+							padding: 7px
+							background-color: $red
+							color: #fff
+							border-radius: 5px
+							position: relative
+							margin-bottom: 40px
+							&:after
+								position: absolute
+								content: ""
+								width: 90%
+								height: 10%
+								left: 5%
+								bottom: -4px
+								background-color: $red
+								filter: blur(5px)
+								transition: 0.2s
+							&:hover
+								&:after
+									opacity: 0
+					.article-main
+						.desc-min
+							padding: 40px 30px
+							width: 95%
+							left: 2.5%
+						.photo
+							min-height: auto
+							img
+								height: auto
+								width: 100%
+								margin: 0
+				h2
+					text-align: center
+			.desc-full
+				padding: 0 10px
+		.aside
+			.row
+				margin-left: -16px
+				margin-right: -15px
+				.main-right
+					height: auto
+					padding: 40px 10px 20px
+					border-radius: 0
+					.white-box
+						border-radius: 5px
+					.b-timer
+						.text-box
+							padding-left: 60px
+							padding-right: 60px
+					form
+						padding-left: 94px
+						padding-right: 94px
+				.aside-sale
+					margin-top: 0
+					padding-left: 10px
+					padding-right: 10px
+					padding-bottom: 39px
+					border-radius: 0 0 5px 5px
+					.info
+						p
+							padding: 0 58px
+						a
+							width: 292px
+							margin-left: auto
+							margin-right: auto
+
+
+
+
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.content
+		.col-lg-7
+			.row
+				h2
+					padding: 0 10px
+				article
+					.article-main
+						.photo
+							min-height: 255px
+							img
+								height: 100%
+								width: auto
+								margin-left: -40%
+						.desc-min
+							padding-top: 15px
+							padding-bottom: 15px
+		.aside
+			.row	
+				.main-right
+					.b-timer
+						.text-box
+							padding-left: 10px
+							padding-right: 10px
+						.b-timer-wrapper
+							padding-right: 45px
+							padding-left: 45px
+					form
+						padding-right: 10px
+						padding-left: 10px
+				.aside-sale
+					.info
+						p
+							padding-right: 10px
+							padding-left: 10px
+						a
+							width: 260px
 
 
 /* Custom, iPhone Retina */

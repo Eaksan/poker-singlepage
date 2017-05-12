@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=06b0eeff9f02ccd0089e67d06ea6309f)
- * Config saved to config.json and https://gist.github.com/06b0eeff9f02ccd0089e67d06ea6309f
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=95d98f5504ec7000aa43195b0e8599c6)
+ * Config saved to config.json and https://gist.github.com/95d98f5504ec7000aa43195b0e8599c6
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -662,15 +662,15 @@ address {
 }
 @media (min-width: 768px) {
   .container {
-    width: 730px;
+    width: 768px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 999px) {
   .container {
-    width: 960px;
+    width: 999px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .container {
     width: 1205px;
   }
@@ -1005,7 +1005,7 @@ address {
     margin-left: 0%;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 999px) {
   .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
     float: left;
   }
@@ -1163,7 +1163,7 @@ address {
     margin-left: 0%;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left;
   }
@@ -2798,36 +2798,6 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
-.modal-header {
-  padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
-}
-.modal-header .close {
-  margin-top: -2px;
-}
-.modal-title {
-  margin: 0;
-  line-height: 1.42857143;
-}
-.modal-body {
-  position: relative;
-  padding: 15px;
-}
-.modal-footer {
-  padding: 15px;
-  text-align: right;
-  border-top: 1px solid #e5e5e5;
-}
-.modal-footer .btn + .btn {
-  margin-left: 5px;
-  margin-bottom: 0;
-}
-.modal-footer .btn-group .btn + .btn {
-  margin-left: -1px;
-}
-.modal-footer .btn-block + .btn-block {
-  margin-left: 0;
-}
 .modal-scrollbar-measure {
   position: absolute;
   top: -9999px;
@@ -2837,7 +2807,6 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 @media (min-width: 768px) {
   .modal-dialog {
-    width: 600px;
     margin: 30px auto;
   }
   .modal-content {
@@ -2848,7 +2817,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     width: 300px;
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 999px) {
   .modal-lg {
     width: 900px;
   }
@@ -3226,7 +3195,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display: inline-block !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 998px) {
   .visible-sm {
     display: block !important;
   }
@@ -3241,22 +3210,22 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display: table-cell !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 998px) {
   .visible-sm-block {
     display: block !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 998px) {
   .visible-sm-inline {
     display: inline !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 998px) {
   .visible-sm-inline-block {
     display: inline-block !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 999px) and (max-width: 1204px) {
   .visible-md {
     display: block !important;
   }
@@ -3271,22 +3240,22 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display: table-cell !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 999px) and (max-width: 1204px) {
   .visible-md-block {
     display: block !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 999px) and (max-width: 1204px) {
   .visible-md-inline {
     display: inline !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 999px) and (max-width: 1204px) {
   .visible-md-inline-block {
     display: inline-block !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .visible-lg {
     display: block !important;
   }
@@ -3301,17 +3270,17 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display: table-cell !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .visible-lg-block {
     display: block !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .visible-lg-inline {
     display: inline !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .visible-lg-inline-block {
     display: inline-block !important;
   }
@@ -3321,17 +3290,17 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display: none !important;
   }
 }
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 998px) {
   .hidden-sm {
     display: none !important;
   }
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 999px) and (max-width: 1204px) {
   .hidden-md {
     display: none !important;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1205px) {
   .hidden-lg {
     display: none !important;
   }

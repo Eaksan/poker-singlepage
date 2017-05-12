@@ -5,11 +5,23 @@ function navbarPosition(){
   $(".navbar-toggle").css("right", -(frameWidth-containerWidth)/2+14);
 }
 
+function articleHeight(){
+  var articHeight = $(".col-lg-7 article").height(),
+    h2Height = $(".col-lg-7 article h2").innerHeight(),
+    amainHeight = 0;
+  amainHeight = articHeight - h2Height - 16;
+  $(".col-lg-7 .article-main").innerHeight(amainHeight);
+}
+
+function menuHeight() {
+  $(".navbar-collapse").css("max-height", $(window).height() - $("header").innerHeight());
+}
+
 $(function() {
   //модальные окна
   $(".img-box").colorbox();
-  $(".login").colorbox();
-  $(".registr").colorbox();
+  $(".colorbox").colorbox();
+  $("select").styler();
   // валидация
   $("form").validate();
   // плавный скрол
@@ -34,13 +46,16 @@ $(function() {
     if ( $(window).width() < 1248 ) {
       navbarPosition();
     };
-
   });
-
-  $(window).scroll(function(){
-    $(".navbar-collapse.in").removeClass("in");
-    $(".navbar-toggle.opened").removeClass("opened").addClass("closed");
-  });
+  menuHeight();
+  // высота H2
+  articleHeight();
+  // 
+  // $(window).scroll(function(){
+  //   $(".navbar-collapse.in").removeClass("in");
+  //   $(".navbar-toggle.opened").removeClass("opened").addClass("closed");
+  // });
+    $(".navbar-collapse")
 
   $(".navbar-toggle").click(function(){
     if($(this).hasClass("closed")){
@@ -88,7 +103,10 @@ $(function() {
         var left_hour = Math.floor( (timestamp - day*24) / 60 / 60 );
 
         $(dayBlock).text(function(){
-          return left_hour;
+          if (day < 10){
+            day = "0" + day;
+          }
+          return day;
         });
         $(hourBlock).text(function(){
           if (left_hour < 10){

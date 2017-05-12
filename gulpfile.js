@@ -29,6 +29,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/bootstrap/bootstrap.js',
 		'app/libs/colorbox/jquery.colorbox.js',
+		'app/libs/formstyler/jquery.formstyler.min.js',
 		'app/libs/fild-style/nariko.js',
 		])
 	.pipe(concat('libs.min.js'))
