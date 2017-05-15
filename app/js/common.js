@@ -38,7 +38,7 @@ $(function() {
     navbarPosition();
   };
 
-  if ( $(window).width() < 767 ) {
+  if ( $(window).width() < 768 ) {
     $(".collapse.in").removeClass("in");
   };
 
@@ -49,13 +49,15 @@ $(function() {
   });
   menuHeight();
   // высота H2
-  articleHeight();
-  // 
-  // $(window).scroll(function(){
-  //   $(".navbar-collapse.in").removeClass("in");
-  //   $(".navbar-toggle.opened").removeClass("opened").addClass("closed");
-  // });
-    $(".navbar-collapse")
+  if($(window).width > 768){
+    articleHeight();
+  };
+  if( $('.navbar-toggle.opened') ) {
+    $( this ).mouseout(function() {
+      $(".navbar-toggle").removeClass("opened").addClass("closed");
+      $(".navbar-ex1-collapse").collapse('hide');
+    })
+  }
 
   $(".navbar-toggle").click(function(){
     if($(this).hasClass("closed")){
@@ -73,7 +75,7 @@ $(function() {
     for (var propName in options) {updatedCookie += "; " + propName; var propValue = options[propName];if (propValue !== true) {updatedCookie += "=" + propValue;}}
     document.cookie = updatedCookie;
   }
-  timer(82800,'.b-timer__item .day', '.b-timer__item .hour', '.b-timer__item .min', '.b-timer__item .sec');
+  timer(98800,'.b-timer__item .day', '.b-timer__item .hour', '.b-timer__item .min', '.b-timer__item .sec');
 
   function timer(value, dayBlock, hourBlock, minBlock, secBlock){
 
@@ -89,48 +91,62 @@ $(function() {
     if(value>0){
       var tfe=$('.tfe-iframe-scheme:first');
       tfe.attr('data-scheme-url',tfe.attr('data-scheme-url')+'?promocode=test_test');
-      }
+    };
 
-      var timerValue = value;
+    var timerValue = value;
 
-      function time(timestamp){
-        if (timestamp < 0) timestamp = 0;
+    function time(timestamp){
+      if (timestamp < 0) timestamp = 0;
 
-        var day = Math.floor( (timestamp/60/60) / 24);
-        var hour = Math.floor(timestamp/60/60);
-        var mins = Math.floor((timestamp - hour*60*60)/60);
-        var secs = Math.floor(timestamp - hour*60*60 - mins*60);
-        var left_hour = Math.floor( (timestamp - day*24) / 60 / 60 );
+      var day = Math.floor( (timestamp/60/60) / 24);
+      var hour = Math.floor(timestamp/60/60);
+      var mins = Math.floor((timestamp - hour*60*60)/60);
+      var secs = Math.floor(timestamp - hour*60*60 - mins*60);
+      var left_hour = Math.floor( (timestamp - day*24) / 60 / 60 );
 
-        $(dayBlock).text(function(){
-          if (day < 10){
-            day = "0" + day;
-          }
-          return day;
-        });
-        $(hourBlock).text(function(){
-          if (left_hour < 10){
-            left_hour = "0" + left_hour;
-          }
-          return left_hour;
-        });
-        $(minBlock).text(function(){
-          if (mins < 10){
-            mins = "0" + mins;
-          }
-          return mins;
-        });              
-        $(secBlock).text(function(){
-          if (secs < 10){
-            secs = "0" + secs;
-          }
-          return secs;
-        }); 
-      }
-      setInterval(function(){
-        timerValue = timerValue - 1;
-        if(timerValue==1)document.location.reload();
-        time(timerValue);
-      }, 1000);
+      $(dayBlock).text(function(){
+        if (day < 10){
+          day = "0" + day;
+        }
+        return day;
+      });
+      $(hourBlock).text(function(){
+        if (left_hour < 10){
+          left_hour = "0" + left_hour;
+        }
+        return left_hour;
+      });
+      $(minBlock).text(function(){
+        if (mins < 10){
+          mins = "0" + mins;
+        }
+        return mins;
+      });              
+      $(secBlock).text(function(){
+        if (secs < 10){
+          secs = "0" + secs;
+        }
+        return secs;
+      }); 
     }
+    setInterval(function(){
+      timerValue = timerValue - 1;
+      if(timerValue==1)document.location.reload();
+      time(timerValue);
+    }, 1000);
+  };
+  $(window).on('scroll',function(){
+    var winHeight = $(window).scrollTop(),
+      winBoth = $(window).scrollTop() + $(window).height();      
+    if($('.desc-full ul').length){
+      $('.desc-full ul li').each(function(){
+          if (((winBoth - 100) > ($(this).offset().top)) && ((winHeight + 100) < ($(this).offset().top))){
+            $(this).addClass('show-item');
+          }
+      });
+    };
+  });
+  // &(".typedjs").typed({
+  //     stringsElement: "С тобой занимаются до тех пор, пока ты не достигнешь намеченного результата С тобой занимаются до тех пор, пока ты не достигнешь намеченного результата"
+  // });
 });

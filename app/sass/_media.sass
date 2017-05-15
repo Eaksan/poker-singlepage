@@ -115,18 +115,39 @@
 				margin-left: 0
 				h2
 					font-size: 45px
+					line-height: 45px
+					margin-bottom: 24px
 				article
-					padding-top: 40px
+					padding-top: 37px
 					.article-main .desc-min
-						padding: 67px 26px 46px
+						padding: 67px 26px 69px
+						p
+							&.typedjs
+								display: none
+							&.typedmobile
+								opacity: 1
+				.desc-full
+					margin-top: 50px
+					li
+						color: #333
+						transition: none
+						margin-left: 10px
+						padding-left: 25px
+						&:before
+							background-color: #ccc
+							width: 13px
 		.aside
 			.row
 				margin-left: 0
 				.main-right
 					padding-left: 21px
 					padding-right: 21px
+					form
+						button
+							margin-top: 25px
 			.aside-sale
 				padding: 20px 21px
+				margin-top: 50px
 
 
 
@@ -139,6 +160,7 @@
 				h2
 					font-size: 30px
 					line-height: 35px
+					margin-bottom: 18px
 				article
 					.article-main
 						.photo
@@ -152,11 +174,15 @@
 								text-align: center
 								display: block
 								margin-left: -60%
+						.desc-min
+							padding: 53px 26px 49px
 				.desc-full
 					ul
 						li
 							font-size: 16px
-
+							color: #333
+							&:before
+								background-color: #ccc
 		.aside
 			.row
 				margin-left: -12px
@@ -166,11 +192,15 @@
 							padding-left: 26px
 				.aside-sale
 					.info
+						.icon-box
+							padding-bottom: 35px
 						p
 							padding: 0 15px
+							line-height: 24px
+
 
 /* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
+@media only screen and (max-width : 767px)
 	header
 		padding-top: 0
 		.navbar
@@ -201,6 +231,7 @@
 				article
 					height: auto
 					border-radius: 0
+					padding-top: 27px
 					.header
 						text-align: center
 						a
@@ -228,8 +259,9 @@
 								&:after
 									opacity: 0
 					.article-main
+						padding-bottom: 145px
 						.desc-min
-							padding: 40px 30px
+							padding: 43px 30px 30px
 							width: 95%
 							left: 2.5%
 						.photo
@@ -240,25 +272,35 @@
 								margin: 0
 				h2
 					text-align: center
+					line-height: 30px
+					margin-bottom: 28px
 			.desc-full
 				padding: 0 10px
 		.aside
+			float: none
 			.row
 				margin-left: -16px
 				margin-right: -15px
 				.main-right
 					height: auto
-					padding: 40px 10px 20px
+					padding: 40px 10px 0
 					border-radius: 0
 					.white-box
 						border-radius: 5px
+						max-width: 480px
+						margin-left: auto
+						margin-right: auto
 					.b-timer
 						.text-box
 							padding-left: 60px
 							padding-right: 60px
+							height: 96px
 					form
 						padding-left: 94px
 						padding-right: 94px
+		.bott-info
+			.aside
+				float: none
 				.aside-sale
 					margin-top: 0
 					padding-left: 10px
@@ -266,6 +308,9 @@
 					padding-bottom: 39px
 					border-radius: 0 0 5px 5px
 					.info
+						max-width: 480px
+						margin-left: auto
+						margin-right: auto
 						p
 							padding: 0 58px
 						a
@@ -279,7 +324,7 @@
 
 
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px)
+@media only screen and (max-width : 479px)
 	.content
 		.col-lg-7
 			.row
