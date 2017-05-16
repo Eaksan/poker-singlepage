@@ -2239,7 +2239,6 @@ tbody.collapse.in {
             box-shadow: none;
   }
   .navbar-collapse.collapse {
-    display: block !important;
     height: auto !important;
     padding-bottom: 0;
     overflow: visible !important;
@@ -2523,10 +2522,6 @@ tbody.collapse.in {
 @media (min-width: 768px) {
   .navbar-left {
     float: left !important;
-  }
-  .navbar-right {
-    float: right !important;
-    margin-right: -15px;
   }
   .navbar-right ~ .navbar-right {
     margin-right: 0;

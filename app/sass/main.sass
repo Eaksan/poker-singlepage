@@ -105,17 +105,15 @@ body
 	max-width: 100%
 	height: auto
 header
-	padding-top: 30px
 	box-shadow: 0 6px 10px rgba(#000, 0.1)
 	background-color: #FFF
 	z-index: 1000
 	position: relative
-	.navbar	
-		margin-bottom: 21px
+	.navbar
 		.navbar-header
 			.navbar-brand
 				height: auto
-				padding: 0
+				padding: 20px 0 0
 		.navbar-collapse
 			.navbar-nav
 				padding-top: 4px
@@ -182,14 +180,14 @@ header
 					.dropdown-menu
 						background-color: #f2f2f2
 						border: none
-						width: 700px
-						top: 65px
-						left: -100px
 						padding: 42px 0
 						border-radius: 0
 						a
 							display: block
 							padding: 0
+							font-family: $bebas
+							font-weight: bold
+							padding-left: 40px
 						h3
 							font-size: 27px
 							margin-bottom: 0
@@ -197,19 +195,8 @@ header
 						p
 							font-size: 16px
 							line-height: 20px
-						&:after
-							content: ""
-							position: absolute
-							top: -15px
-							left: 175px
-							width: 32px
-							height: 70px
-							background-color: #f2f2f2
-							border-radius: 85% 85% 0 0
 						.col-lg-5, .col-lg-7
-							padding-left: 42px
-							padding-right: 42px
-
+							width: 100%
 							a
 								h3
 									color: #333333
@@ -220,11 +207,101 @@ header
 									color: #828282
 									h3
 										color: $red
-						.col-lg-5
-							border-right: 1px solid #ccc
-						.col-lg-7
-							border-left: 1px solid #ccc
-							margin-left: -1px
+				.navbar-right
+					float: none
+					margin-right: 0
+	.navbar
+		margin-bottom: 0
+		border: none
+		.navbar-header
+			width: 100%
+			.navbar-toggle
+				display: block
+				margin-right: -17px
+				margin-top: 0
+				margin-bottom: 0
+				padding: 47px 43px
+				border-radius: 0
+				border: 1px solid #ccc
+				height: 110px
+				.icon-bar
+					background-color: #2d2d2d
+					&:last-child
+						width: 70%
+
+				&.opened
+					.icon-bar
+						&:nth-child(2)
+							animation: navtoggle 0.5s forwards
+						&:nth-child(3)
+							animation: navtoggle2 0.5s forwards
+							transform: rotate(-45deg) translateY(-10px)
+						&:last-child
+							display: none
+			.navbar-brand
+				padding-left: 20px
+		.navbar-collapse.collapse, .navbar-collapse.collapsing
+			position: absolute
+			top: 110px
+			right: 0
+			width: 300px
+			margin: 0
+			padding: 22px 0 0
+			background-color: #f2f2f2
+			z-index: 1000
+			.navbar-nav
+				width: 100%
+				background-color: #f2f2f2
+				display: block
+				left: auto
+				&.navbar-right
+					li
+						&:last-child
+							border: none
+				li
+					display: block
+					float: none
+					padding: 9px 0 9px 0
+					border-bottom: 1px solid #ccc
+					a
+						padding-left: 40px
+						img
+							display: none
+					&.dropdown
+						padding:  9px 0 0
+						& > a
+							padding-left: 40px
+							padding-bottom: 9px
+						.dropdown-menu
+							position: relative
+							padding: 0
+							width: 100%
+							float: none
+							left: 0
+							top: 0
+							background-color: #e6e6e6
+							box-shadow: none
+							box-shadow: inset 0 0 5px rgba(#000, 0.15)
+							h3
+								line-height: 45px
+								font-weight: bold
+								color: #000
+							p
+								display: none
+							&:after
+								content: none
+							.col-lg-5, .col-lg-7
+								padding: 0
+								margin: 0
+								border: none
+							a
+								&:hover, &:focus
+									h3
+										color: $red
+
+					&.active
+						a:before
+							content: none
 .content
 	z-index: -1
 	.col-lg-7

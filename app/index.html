@@ -48,37 +48,59 @@
 				
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-ex1-collapse">
-							<ul class="nav navbar-nav">
+							<ul class="nav navbar-nav" id="nav-accordion">
 								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/icon/bars.png" alt="">Обучение</a>
-									<div class="dropdown-menu">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-parent="#nav-accordion" aria-expanded="true" aria-controls="navpanel1">
+										<img src="img/icon/bars.png" alt="">Обучение
+									</a>
+									<div class="dropdown-menu in" id="navpanel1" role="tabpanel" aria-labelledby="headingOne">
 										<div class="container-fluid">
 											<div class="row">
-												<div class="col-lg-5">
-													<a href="">
+												<a href="">
 													<h3>AWS 2.0</h3>
 													<p>Курс для начинающих</p>
-													</a>
-													<a href="">
+												</a>
+												<a href="">
 													<h3>IRON MTT</h3>
 													<p>Курс турнирного покера</p>
-													</a>
-												</div>
-												<div class="col-lg-7">
-													<a href="">
+												</a>
+												<a href="">
 													<h3>BSS + HM</h3>
 													<p>Базовый курс из 8 групповых и 3 индивидуальных занятий по одному часу</p>
-													</a>
-													<a href="">
+												</a>
+												<a href="">
 													<h3>Инивидуальное обучение</h3>
 													<p>Курс с личным тренером, на котором ты будешь заниматься до тех пор, пока не достигнешь намеченного тобой и тренером результата.</p>
-													</a>
-												</div>
+												</a>
 											</div>
 										</div>
 									</div>
 								</li>
-								<li class="active"><a href="#">Блог Академии</a></li>
+								<li class="dropdown active">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-parent="#nav-accordion" aria-expanded="false" aria-controls="navpanel2">Блог Академии</a>
+									<div class="dropdown-menu" id="navpanel2">
+										<div class="container-fluid">
+											<div class="row">
+												<a href="">
+												<h3>AWS 2.0</h3>
+												<p>Курс для начинающих</p>
+												</a>
+												<a href="">
+												<h3>IRON MTT</h3>
+												<p>Курс турнирного покера</p>
+												</a>
+												<a href="">
+												<h3>BSS + HM</h3>
+												<p>Базовый курс из 8 групповых и 3 индивидуальных занятий по одному часу</p>
+												</a>
+												<a href="">
+												<h3>Инивидуальное обучение</h3>
+												<p>Курс с личным тренером, на котором ты будешь заниматься до тех пор, пока не достигнешь намеченного тобой и тренером результата.</p>
+												</a>
+											</div>
+										</div>
+									</div>
+								</li>
 								<li><a href="#">Школа</a></li>
 								<li><a href="#">Видео</a></li>
 								<li><a href="#">О нас</a></li>
@@ -184,7 +206,7 @@
 										</span>
 									</div>
 									<input id="checkbox1" type="checkbox" checked>
-									<label for="checkbox1">Хочу получать полезные статьи</label>
+									<label for="checkbox1">Согласен c договором <a href="">оферты</a></label>
 									<button type="submit" class="btn sec-1__btn">Оформить заявку</button>
 								</form>
 							</div>
@@ -325,7 +347,7 @@
 	
 	<link rel="stylesheet" href="css/main.min.css">
 	<script src="js/libs.min.js"></script>
-	<script src="js/common.js"></script>
+	<script src="js/common.min.js"></script>
 
 </body>
 </html>

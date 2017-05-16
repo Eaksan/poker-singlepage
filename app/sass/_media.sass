@@ -4,110 +4,6 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1204px)
-	header
-		padding-top: 20px
-		.navbar
-			.navbar-header
-				width: 100%
-				.navbar-toggle
-					display: block
-					margin-right: -15px
-					margin-top: 0
-					margin-bottom: 0
-					padding: 31px 27px
-					border-radius: 0
-					border: 1px solid #ccc
-					height: 79px
-
-					.icon-bar
-						background-color: #2d2d2d
-						&:last-child
-							width: 70%
-
-					&.opened
-						.icon-bar
-							&:nth-child(2)
-								animation: navtoggle 0.5s forwards
-							&:nth-child(3)
-								animation: navtoggle2 0.5s forwards
-								transform: rotate(-45deg) translateY(-10px)
-							&:last-child
-								display: none
-				.navbar-brand
-					padding-left: 20px
-			.navbar-collapse.collapse, .navbar-collapse.collapsing
-				display: none !important
-				position: absolute
-				top: 80px
-				right: 0
-				width: 300px
-				margin: 0
-				padding: 22px 0 0
-				background-color: #f2f2f2
-				height: 1600px !important
-				z-index: 1000
-				&:before
-					position: absolute
-					right: 300px
-					top: 0
-					content: ""
-					height: 1600px
-					width: 1200px
-					z-index: -1
-					background-color: rgba(#000, 0.5)
-				.navbar-nav
-					width: 100%
-					position: relative !important
-					background-color: #f2f2f2
-					display: block
-					left: auto
-					&.navbar-right
-						float: left !important
-						li
-							&:last-child
-								border: none
-					li
-						display: block
-						float: none
-						padding: 9px 0 9px 0
-						border-bottom: 1px solid #ccc
-						a
-							padding-left: 40px
-							img
-								display: none
-						&.dropdown
-							padding: 0
-							a
-								padding-left: 40px
-							.dropdown-menu
-								position: relative
-								padding: 0
-								width: 100%
-								float: none
-								left: 0
-								top: 0
-								display: block
-								background-color: #e6e6e6
-								box-shadow: none
-								box-shadow: inset 0 0 5px rgba(#000, 0.15)
-								h3
-									line-height: 45px
-								p
-									display: none
-								&:after
-									content: none
-								.col-lg-5, .col-lg-7
-									padding: 0
-									margin: 0
-									border: none
-
-						&.active
-							a:before
-								content: none
-
-				&.in
-					display: block !important
-					animation: sliderRightOn 0.5s
 	.content
 		.col-lg-7
 			.row	
@@ -211,6 +107,7 @@
 			.navbar-header
 				width: initial
 				.navbar-brand
+					padding-top: 0
 					img
 						width: 147px
 						padding-top: 20px
@@ -222,7 +119,9 @@
 					border-radius: 0
 					border-left: 1px solid #ccc
 					border-bottom: 1px solid #ccc
-					height: 79px
+					height: 80px
+			.navbar-collapse.collapse, .navbar-collapse.collapsing
+				top: 80px
 	.content
 		.col-lg-7
 			.row
