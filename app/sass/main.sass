@@ -405,6 +405,7 @@ header
 				height: 650px
 				box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15)
 				border-radius: 0 0 5px 5px
+				position: relative
 			// стили таймера
 			.b-timer
 				text-align: center
@@ -438,6 +439,31 @@ header
 							line-height: 100%
 							color: #4F4F4F
 							font-weight: normal
+			// стили message
+			#system-message-container
+				position: absolute
+				width: 100%
+				height: auto
+				z-index: 101
+				text-align: center
+
+				#system-message
+					background-color: #fff
+					border-radius: 5px
+					margin: 0 5px
+					.alert
+						font-family: $bebas
+						font-size: 24px
+						padding-top: 40%
+						.close
+							display: inline-block
+							cursor: pointer
+							position: absolute
+							right: 10px
+							top: 10px
+							line-height: 5px
+						.alert-heading
+							font-size: 28px
 			// стили формы
 			form
 				padding: 0 34px

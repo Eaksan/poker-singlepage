@@ -30,7 +30,6 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/bootstrap/bootstrap.js',
 		'app/libs/colorbox/jquery.colorbox.js',
 		'app/libs/formstyler/jquery.formstyler.min.js',
-		'app/libs/fild-style/nariko.js',
 		])
 	.pipe(concat('libs.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)

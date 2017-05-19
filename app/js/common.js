@@ -18,9 +18,86 @@ function menuHeight() {
 }
 
 $(function() {
+  //nariko
+  ( function( window ) {
+      'use strict';
+      function classReg( className ) {
+        return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+      }
+      var hasClass, addClass, removeClass;
+      if ( 'classList' in document.documentElement ) {
+        hasClass = function( elem, c ) {
+          return elem.classList.contains( c );
+        };
+        addClass = function( elem, c ) {
+          elem.classList.add( c );
+        };
+        removeClass = function( elem, c ) {
+          elem.classList.remove( c );
+        };
+      }
+      else {
+        hasClass = function( elem, c ) {
+          return classReg( c ).test( elem.className );
+        };
+        addClass = function( elem, c ) {
+          if ( !hasClass( elem, c ) ) {
+            elem.className = elem.className + ' ' + c;
+          }
+        };
+        removeClass = function( elem, c ) {
+          elem.className = elem.className.replace( classReg( c ), ' ' );
+        };
+      }
+      function toggleClass( elem, c ) {
+        var fn = hasClass( elem, c ) ? removeClass : addClass;
+        fn( elem, c );
+      }
+      var classie = {
+        hasClass: hasClass,
+        addClass: addClass,
+        removeClass: removeClass,
+        toggleClass: toggleClass,
+        has: hasClass,
+        add: addClass,
+        remove: removeClass,
+        toggle: toggleClass
+      };
+      if ( typeof define === 'function' && define.amd ) {
+        define( classie );
+      } else {
+        window.classie = classie;
+      }
+  })( window );
+          
+  (function() {       
+      if (!String.prototype.trim) {
+          (function() {           
+              var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+              String.prototype.trim = function() {
+                  return this.replace(rtrim, '');
+              };
+          })();
+      }
+      [].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {         
+          if( inputEl.value.trim() !== '' ) {
+              classie.add( inputEl.parentNode, 'input--filled' );
+          }         
+          inputEl.addEventListener( 'focus', onInputFocus );
+          inputEl.addEventListener( 'blur', onInputBlur );
+      } );
+      function onInputFocus( ev ) {
+          classie.add( ev.target.parentNode, 'input--filled' );
+      }
+      function onInputBlur( ev ) {
+          if( ev.target.value.trim() === '' ) {
+              classie.remove( ev.target.parentNode, 'input--filled' );
+          }
+      }
+  })();
   //модальные окна
-  $(".img-box").colorbox();
   $(".colorbox").colorbox();
+
   $("select").styler();
   // валидация
   $("form").validate();
@@ -37,6 +114,7 @@ $(function() {
   if ( $(window).width() < 1248 ) {
     navbarPosition();
   };
+  $('.alert-message').height($("form").height()+20);
 
   if ( $(window).width() < 768 ) {
     $(".collapse.in").removeClass("in");
@@ -140,7 +218,7 @@ $(function() {
   };
   $(window).on('scroll',function(){
     var winHeight = $(window).scrollTop(),
-      winBoth = $(window).scrollTop() + $(window).height();      
+      winBoth = $(window).scrollTop() + $(window).height();
     if($('.desc-full ul').length){
       $('.desc-full ul li').each(function(){
           if (((winBoth - 100) > ($(this).offset().top)) && ((winHeight + 100) < ($(this).offset().top))){
@@ -149,7 +227,4 @@ $(function() {
       });
     };
   });
-  // &(".typedjs").typed({
-  //     stringsElement: "С тобой занимаются до тех пор, пока ты не достигнешь намеченного результата С тобой занимаются до тех пор, пока ты не достигнешь намеченного результата"
-  // });
 });
