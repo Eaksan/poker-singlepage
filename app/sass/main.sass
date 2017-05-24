@@ -530,20 +530,24 @@ header
 						outline: none
 						margin-bottom: 25px
 					label
-						position: absolute
-						font-size: 16px
-						color: #999
-						font-weight: normal
-						top: 10px
-						transition: 0.2s
-						left: 0
-						cursor: text
-						width: 100%
+						&:not(.error)
+							position: absolute
+							font-size: 16px
+							color: #999
+							font-weight: normal
+							top: 10px
+							transition: 0.2s
+							left: 0
+							cursor: text
+							width: 100%
 						&.error
 							color: $red
 							position: relative
+							font-size: 12px
+							top: -20px
+							left: 0
 					&.input--filled
-						label
+						label:not(.error)
 							font-size: 14px
 							cursor: default
 							transform: translateY(-20px)
