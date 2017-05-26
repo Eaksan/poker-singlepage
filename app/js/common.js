@@ -101,6 +101,7 @@ $(function() {
   $("select").styler();
   // валидация
   $("form").validate();
+
   // плавный скрол
   $("a.scrollto").click(function() {
     var elementClick = $(this).attr("href")
@@ -114,7 +115,7 @@ $(function() {
   if ( $(window).width() < 1248 ) {
     navbarPosition();
   };
-  $('.alert-message').height($("form").height()+20);
+  $('.alert-message').innerHeight($("form").height()+20);
 
   if ( $(window).width() < 768 ) {
     $(".collapse.in").removeClass("in");
@@ -156,16 +157,16 @@ $(function() {
     for (var propName in options) {updatedCookie += "; " + propName; var propValue = options[propName];if (propValue !== true) {updatedCookie += "=" + propValue;}}
     document.cookie = updatedCookie;
   }
-  timer(98800,'.b-timer__item .day', '.b-timer__item .hour', '.b-timer__item .min', '.b-timer__item .sec');
+  timer(1198800,'.b-timer__item .day', '.b-timer__item .hour', '.b-timer__item .min', '.b-timer__item .sec');
 
   function timer(value, dayBlock, hourBlock, minBlock, secBlock){
 
     var tmst=parseInt(getCookie('tmst')),d,at;
     if(!tmst){
       d=new Date();
-      d.setHours(d.getHours()+23);
+      d.setHours(d.getHours()+123);
       tmst=Math.floor(d.getTime()/1000);
-      setCookie('tmst',tmst,{'expires':15552000,'path':'/'});
+      setCookie('tmst',tmst,{'expires':1115552000,'path':'/'});
       }
     d=new Date();value=tmst-Math.floor(d.getTime()/1000);
 
@@ -179,11 +180,10 @@ $(function() {
     function time(timestamp){
       if (timestamp < 0) timestamp = 0;
 
-      var day = Math.floor( (timestamp/60/60) / 24);
-      var hour = Math.floor(timestamp/60/60);
-      var mins = Math.floor((timestamp - hour*60*60)/60);
-      var secs = Math.floor(timestamp - hour*60*60 - mins*60);
-      var left_hour = Math.floor( (timestamp - day*24) / 60 / 60 );
+      var day = Math.floor( (timestamp/60/60) / 24),
+        hour = Math.floor((timestamp - (day * 60 * 60 * 24))/60/60),
+        mins = Math.floor((timestamp - day*60*60*24 - hour*60*60)/60),
+        secs = Math.floor(timestamp - day*60*60*24 - hour*60*60 - mins*60);
 
       $(dayBlock).text(function(){
         if (day < 10){
@@ -192,10 +192,10 @@ $(function() {
         return day;
       });
       $(hourBlock).text(function(){
-        if (left_hour < 10){
-          left_hour = "0" + left_hour;
+        if (hour < 10){
+          hour = "0" + hour;
         }
-        return left_hour;
+        return hour;
       });
       $(minBlock).text(function(){
         if (mins < 10){
